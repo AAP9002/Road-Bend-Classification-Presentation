@@ -46,7 +46,7 @@
 						<br/>
 						<p class="fragment">Enhance vehicle <b>safety and assist</b> the driver.🦺</p>
 						<p class="fragment">Combination of sensors, cameras, and algorithms to <b>monitor the vehicle's surroundings</b>.📊</p>
-						<p class="fragment">Help <b>reduce the risk of accidents</b> and improve overall road safety.✅</p>
+						<p class="fragment">Help <b>reduce the risk of accidents</b> and improve overall <b>road safety</b>.✅</p>
 					</section>
 					<section data-background-color="aquamarine">
 						<h2>Examples:</h2>
@@ -143,24 +143,95 @@
 							title="Processing Pipeline"
 							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
 							allowfullscreen
 							></iframe>
 					</section>
 				</section>
+				<section style="background: rgb(250, 77, 8);">
+					<h2>Milestone 1: Prepare Data</h2>
+				</section>
 				<section>
 					<section>
-						<h2>Milestone 1: Prepare Data</h2>
-					</section>
-					<section>
 						<h2>Data Collection</h2>
+						<img src="images/dashcam/video_map.png" data-preview-image alt="Data Collection" width="600px"></img>
+						<small>6hr45mins of UK road footage between October 2024 and April 2025</small>
+					</br>
+						<small>Covering Range of: Seasons, Road types, Speeds, Weather conditions</small>
 					</section>
 					<section>
 						<h2>Stereo Camera</h2>
+						<iframe
+						width="700"
+						height="400"
+						src="https://www.youtube.com/embed/3ZvWKtX1jNc?si=3PdZ2gK91KiFoGbP&vq=hd1080&loop=1&playlist=3ZvWKtX1jNc"
+						title="Data collection Vehicle"
+						frameborder="0"
+						allow="accelerometer;
+						autoplay; clipboard-write;
+						encrypted-media; gyroscope;
+						picture-in-picture;
+						web-share"
+						referrerpolicy="strict-origin-when-cross-origin"
+						allowfullscreen></iframe>
+						<small>Captured in stereo for future research & development<br/>(calibration artifacts publicly available)</small>
+					</section>
+					<section>
+						<iframe
+						width="1000"
+						height="520"
+						src="https://www.youtube.com/embed/HhVJy-pPvQs?si=wHuC8ujdBxD2gkqo&vq=hd1080&loop=1&playlist=HhVJy-pPvQs"
+						title="Inside Data collection Vehicle"
+						frameborder="0"
+						allow="accelerometer;
+						autoplay; clipboard-write;
+						encrypted-media; gyroscope;
+						picture-in-picture;
+						web-share"
+						referrerpolicy="strict-origin-when-cross-origin"
+						allowfullscreen></iframe>
+						<small>Main 4k camera capturing driver perspective, 1080p camera on passenger side.</small>
 					</section>
 					<section>
 						<h2>NMEA Positioning Data</h2>
+						<small>Positioning data embedded in video: 10Hz sample rate.</small>
+						<pre>
+							<code data-trim data-noescape>
+								$GPRMC,[utc_time],[status],[latitude],[ns_indicator],[longitude],[ew_indicator],[speed_knots],[course_deg],[date_ddmmyy],[mag_var],[mag_var_dir]*[checksum]
+								$GPGGA,[utc_time],[latitude],[ns_indicator],[longitude],[ew_indicator],[fix_quality],[num_sats],[hdop],[altitude],[alt_unit],[geoid_sep],[geoid_unit],[dgps_age],[dgps_station]*[checksum]
+							</code>
+						</pre>
+						<small>We focus on:
+							<ul>
+								<li>UTC Time</li>
+								<li>Speed (knots)</li>
+								<li>N/S and E/W</li>
+								<li>Latitude (Degrees Minutes)</li>
+								<li>Longitude (Degrees Minutes)</li>
+						</small>
 					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Automatic Bend Labelling</h2>
+					</section>
+					<section>
+						<h2>Aim</h2>
+					</section>
+					<section data-transition="fade">
+						<h2>Distance based heading change</h2>
+						<img src="images/bend_detection/distance-based-angle-mild.jpg" data-preview-image alt="Heading Change" width="500px"></img>
+					</section>
+					<section data-transition="fade">
+						<h2>Distance based heading change</h2>
+						<img src="images/bend_detection/distance-based-angle-sharp.jpg" data-preview-image alt="Heading Change" width="500px"></img>
+					</section>
+					<section>
+						<h2>Evaluation</h2>
+					</section>
+				</section>
+				<section>
+					<h2>Milestone 2: Find Road Vanishing Point (R-VP) </h2>
+					<p>Road Vanishing Point (R-VP) Estimation</p>
 				</section>
 				<section>
 					<section>
@@ -172,46 +243,41 @@
 				</section>
 				<section>
 					<section>
-						<h2>1. Automatic Bend Labelling</h2>
-					</section>
-					<section>
-						<h2>Challenges</h2>
-					</section>
-					<section>
-						<h2>Solution</h2>
-					</section>
-					<section>
-						<h2>Evaluation</h2>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>2. Road Vanishing Point (R-VP) Estimation</h2>
+						<h2>Road Vanishing Point (R-VP) Estimation</h2>
 					</section>
 					<section>
 						<h2>Challenges</h2>
 					</section>
 					<section>
 						<h2>Solution 1</h2>
+						<iframe 
+							width="1200"
+							height="400"
+							src="https://www.youtube.com/embed/difYS0XOhec?si=Z4WKSi7eJUEC39VF&vq=hd1080&loop=1&playlist=difYS0XOhec"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen></iframe>
 					</section>
 					<section>
 						<h2>Evaluation 1</h2>
 					</section>
 					<section>
 						<h2>Solution 2</h2>
-					</section>
-					<section>
-						<h2>Evaluation 2</h2>
 						<iframe
 							width="1200"
 							height="520"
-							src="https://www.youtube.com/embed/KW6rCPJRAco?autoplay=1&vq=hd1080"
+							src="https://www.youtube.com/embed/KW6rCPJRAco?&vq=hd1080&start=80&loop=1&playlist=KW6rCPJRAco"
 							title="YouTube video player"
 							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							referrerpolicy="strict-origin-when-cross-origin"
 							allowfullscreen
 							></iframe>
+					</section>
+					<section>
+						<h2>Evaluation 2</h2>
 						</section>
 				</section>
 				<section>
@@ -230,7 +296,11 @@
 				</section>
 				<section>
 					<section>
-						<h2>5. Dataset Generation </h2>
+						<h2>5. Dataset Generation</h2>
+					</section>
+					<section>
+						<h2>Generation Pipeline</h2>
+						<img src="images/dataset_gen/pipeline.png" data-preview-image alt="Generation Pipeline" width="10000px"></img>
 					</section>
 					<section>
 						<h2>Challenges</h2>
@@ -244,7 +314,7 @@
 				</section>
 				<section>
 					<section>
-						<h2>6. Deep Learning Classification </h2>
+						<h2>6. Deep Learning Classification Models </h2>
 					</section>
 					<section>
 						<h2>Challenges</h2>
@@ -274,6 +344,11 @@
 				<section>
 					<section>
 						<h2>Future Work</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Bibliography</h2>
 					</section>
 				</section>
 			</div>
