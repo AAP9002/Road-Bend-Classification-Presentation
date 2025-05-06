@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<!-- <link rel="stylesheet" href="dist/theme/black.css"> -->
+		 <link rel="stylesheet" href="dist/theme/white.css"
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -17,25 +18,265 @@
 		<div class="reveal">
 			<div class="slides">
 				<section
-					data-markdown data-transition="fade"
-					data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)"
+					data-background-image="images\intro\bend_4_left_5.58.jpg"
+					data-background-size="cover"
+					data-background-position="center center"
+					data-background-transition="fade"				
+					data-markdown
 					>
-					<textarea data-template>
+					<textarea data-template >
 						## ROAD BEND CLASSIFICATION
 						USING OPTICAL FLOW & DEEP LEARNING
 
+						<br/> <br/> <br/> <br/>
 						<hr/>
-						<small>Alan Anthony Prophett</small>
-
-						<small>Supervised by Dr Terence Morley</small>					</small>
-					  </textarea>
+							<small style="color: white;">Alan Anthony Prophett</small><br/>
+							<small style="color: white;">Supervised by Dr Terence Morley</small>
+						<hr/>
+					</textarea>
 
 				</section>
 				<section>
-					<h2>Introduction</h2>
-					<p>Road bends are a common feature of the road network and can be dangerous for drivers if not approached with caution.</p>
-					<p>In this project, we will explore the use of optical flow and deep learning to classify road bends in real-time.</p>
+					<section
+						data-transition="zoom">
+						<div data-id="box" style="background: aquamarine;"><h1>Motivation</h1></div>
+					</section>
+					<section data-background-color="aquamarine">
+						<h3>Advanced Driver Assistance Systems (ADAS)</h3>
+						<br/>
+						<p class="fragment">Enhance vehicle <b>safety and assist</b> the driver.🦺</p>
+						<p class="fragment">Combination of sensors, cameras, and algorithms to <b>monitor the vehicle's surroundings</b>.📊</p>
+						<p class="fragment">Help <b>reduce the risk of accidents</b> and improve overall road safety.✅</p>
+					</section>
+					<section data-background-color="aquamarine">
+						<h2>Examples:</h2>
+	
+						<p class="fragment">Adaptive cruise control.🕛</p>
+	
+						<p class="fragment">Lane departure warning.🛣️</p>
+	
+						<p class="fragment">Automatic emergency braking.🛑</p>
+					</section>
 				</section>
+				<section>
+					<section
+						data-transition="zoom">
+						<div data-id="box" style="background: rgb(255, 189, 127);"><h1>Road Bend Prediction</h1></div>
+					</section>
+					<section data-background-color="rgb(255, 189, 127)">
+						<h2>Road Bend Prediction:</h2>
+	
+						<p class="fragment">Observing upcoming bends.🔭</p>
+	
+						<p class="fragment">Classifying the direction and severity.📊</p>
+	
+						<p class="fragment">Assess Risk -> Alert driver or intervene.📉</p>
+					</section>
+					<section data-background-color="rgb(255, 189, 127)">
+						<h3>Use Case: Fire engine study to reduce rollover 🚒</h3>
+	
+						<p class="fragment">Simulated complex roads.🗺️</p>
+	
+						<p class="fragment">Firefighters Navigated with & without system.🔔</p>
+	
+						<p class="fragment"> Reported significant reduction in roll-over risk.⬇️</p>
+					</section>
+					<section data-background-color="rgb(255, 189, 127)">
+						<h3>Study: Real World Experiment 🚗</h3>
+	
+						<p class="fragment">They used GPS and high detailed maps to find upcoming bend.🗺️</p>
+	
+						<p class="fragment">Alerted driver with advisory speed.🔔</p>
+	
+						<p class="fragment">Reduction in Risk in real-world environment.⬇️</p>
+					</section>
+				</section>
+				<section>
+					<section
+						data-transition="zoom">
+						<div data-id="box" style=" background: rgb(94, 243, 181);"><h1>This Bend Classification System</h1></div>
+					</section>
+					<section data-background-color="rgb(94, 243, 181)">
+						<h2>Aims:</h2>
+	
+						<p class="fragment">Vision only system.📷</p>
+
+						<p class="fragment">Detect and classify upcoming bend direction & sharpness.🛣️</p>
+
+						<p class="fragment">Build the system to handle real-world environments.🌍</p>
+	
+					</section>
+					<section data-background-color="rgb(94, 243, 181)">
+						<h3>Human-Like Judgement</h3>
+	
+						<img src="images/existing/motion-flow-set-up.png" alt="Human Judgement" width="800"></img>
+						<p>Manipulating Motion Field... Over/Under Steering</p>
+					</section>
+					<section data-background-color="rgb(94, 243, 181)">
+						<h3>Human-Like Judgement</h3>
+	
+						<img src="images/existing/motion-flow-set-up.png" alt="Human Judgement" width="800"></img>
+						<p>Manipulating Motion Field... Over/Under Steering</p>
+					</section>
+					<section data-background-color="rgb(94, 243, 181)">
+						<h2>Experiment Hypothesis:</h2>
+	
+						<p class="fragment">1. Bend classification machine Learning on RGB sequences.</p>
+
+						<p class="fragment">2. Practicality of human-like motion fields for bend classification.</p>
+
+						<p class="fragment">3. Impact of R-VP focused sequences.</p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+					<h2>Processing Pipeline 🏭</h2>
+						<img src="images/ProcessingPipeline.png" data-preview-image data-preview-fit="cover" alt="Processing Pipeline" height="400px"></img>
+					</section>
+					<section>
+						<iframe
+							width="1400"
+							height="700"
+							src="/images/ProcessingPipeline.pdf"
+							title="Processing Pipeline"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							></iframe>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Milestone 1: Prepare Data</h2>
+					</section>
+					<section>
+						<h2>Data Collection</h2>
+					</section>
+					<section>
+						<h2>Stereo Camera</h2>
+					</section>
+					<section>
+						<h2>NMEA Positioning Data</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Challenges Of Understanding Driving Scenes</h2>
+					</section>
+					<section>
+						<h2>Challenges</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>1. Automatic Bend Labelling</h2>
+					</section>
+					<section>
+						<h2>Challenges</h2>
+					</section>
+					<section>
+						<h2>Solution</h2>
+					</section>
+					<section>
+						<h2>Evaluation</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>2. Road Vanishing Point (R-VP) Estimation</h2>
+					</section>
+					<section>
+						<h2>Challenges</h2>
+					</section>
+					<section>
+						<h2>Solution 1</h2>
+					</section>
+					<section>
+						<h2>Evaluation 1</h2>
+					</section>
+					<section>
+						<h2>Solution 2</h2>
+					</section>
+					<section>
+						<h2>Evaluation 2</h2>
+						<iframe
+							width="1200"
+							height="520"
+							src="https://www.youtube.com/embed/KW6rCPJRAco?autoplay=1&vq=hd1080"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							></iframe>
+						</section>
+				</section>
+				<section>
+					<section>
+						<h2>3. Interpreting R-VP with Dense Optical Flow </h2>
+					</section>
+					<section>
+						<h2>Challenges</h2>
+					</section>
+					<section>
+						<h2>Solution</h2>
+					</section>
+					<section>
+						<h2>Evaluation</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>5. Dataset Generation </h2>
+					</section>
+					<section>
+						<h2>Challenges</h2>
+					</section>
+					<section>
+						<h2>Solution</h2>
+					</section>
+					<section>
+						<h2>Evaluation</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>6. Deep Learning Classification </h2>
+					</section>
+					<section>
+						<h2>Challenges</h2>
+					</section>
+					<section>
+						<h2>Solution</h2>
+					</section>
+					<section>
+						<h2>Evaluation</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Comparing RGB with Optical Flow </h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Outcomes</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Limitations</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Future Work</h2>
+					</section>
+				</section>
+			</div>
 			</div>
 		</div>
 
@@ -49,6 +290,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				autoPlayMedia: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
