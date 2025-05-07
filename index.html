@@ -47,8 +47,9 @@
 						<p class="fragment">Enhance vehicle <b>safety and assist</b> the driver.🦺</p>
 						<p class="fragment">Combination of sensors, cameras, and algorithms to <b>monitor the vehicle's surroundings</b>.📊</p>
 						<p class="fragment">Help <b>reduce the risk of accidents</b> and improve overall <b>road safety</b>.✅</p>
+						[9]
 					</section>
-					<section data-background-color="aquamarine">
+					<!-- <section data-background-color="aquamarine">
 						<h2>Examples:</h2>
 	
 						<p class="fragment">Adaptive cruise control.🕛</p>
@@ -56,7 +57,7 @@
 						<p class="fragment">Lane departure warning.🛣️</p>
 	
 						<p class="fragment">Automatic emergency braking.🛑</p>
-					</section>
+					</section> -->
 				</section>
 				<section>
 					<section
@@ -80,6 +81,8 @@
 						<p class="fragment">Firefighters Navigated with & without system.🔔</p>
 	
 						<p class="fragment"> Reported significant reduction in roll-over risk.⬇️</p>
+
+						[3]
 					</section>
 					<section data-background-color="rgb(255, 189, 127)">
 						<h3>Study: Real World Experiment 🚗</h3>
@@ -89,6 +92,7 @@
 						<p class="fragment">Alerted driver with advisory speed.🔔</p>
 	
 						<p class="fragment">Reduction in Risk in real-world environment.⬇️</p>
+						[4]
 					</section>
 				</section>
 				<section>
@@ -110,13 +114,13 @@
 						<h3>Human-Like Judgement</h3>
 	
 						<img src="images/existing/motion-flow-set-up.png" alt="Human Judgement" width="800"></img>
-						<p>Manipulating Motion Field... Over/Under Steering</p>
+						<p>Manipulating Motion Field... Over/Under Steering Source: [5]</p>
 					</section>
 					<section data-background-color="rgb(94, 243, 181)">
 						<h3>Human-Like Judgement</h3>
 	
-						<img src="images/existing/motion-flow-set-up.png" alt="Human Judgement" width="800"></img>
-						<p>Manipulating Motion Field... Over/Under Steering</p>
+						<img src="images/existing/gaze.png" alt="Human Judgement" width="800"></img>
+						<p>Gaze on R-VP when negotiating bends. Source: [2].</p>
 					</section>
 					<section data-background-color="rgb(94, 243, 181)">
 						<h2>Experiment Hypothesis:</h2>
@@ -153,10 +157,12 @@
 				<section>
 					<section>
 						<h2>Data Collection</h2>
-						<img src="images/dashcam/video_map.png" data-preview-image alt="Data Collection" width="600px"></img>
+						<img src="images/dashcam/video_map.png" data-preview-image alt="Data Collection" width="550px"></img>
 						<small>6hr45mins of UK road footage between October 2024 and April 2025</small>
 					</br>
 						<small>Covering Range of: Seasons, Road types, Speeds, Weather conditions</small>
+						<br/>
+						<small>⚠️ Disclaimer: Footage at night was removed.</small>
 					</section>
 					<section>
 						<h2>Stereo Camera</h2>
@@ -215,7 +221,9 @@
 						<h2>Automatic Bend Labelling</h2>
 					</section>
 					<section>
-						<h2>Aim</h2>
+						<p>Detect bends in the dataset.🔍</p>
+						<p>Label them with severity and speed.🏷️</p>
+						<p>Clip 10, 20, 30, 40, 50, 75, 100 metres before bend.📏</p>
 					</section>
 					<section data-transition="fade">
 						<h2>Distance based heading change</h2>
@@ -225,11 +233,126 @@
 						<h2>Distance based heading change</h2>
 						<img src="images/bend_detection/distance-based-angle-sharp.jpg" data-preview-image alt="Heading Change" width="500px"></img>
 					</section>
+					<section data-transition="none">
+						<h2><Data>Detect start and end.</Data></h2>
+							<img
+							  src="images\bend_detection\map_examples\2.png"
+							/>
+						</section>
+						<section data-transition="none">
+							<h2><Data>Detect start and end.</Data></h2>
+							
+								<img
+								  src="images\bend_detection\map_examples\3.png"
+								/>
+							
+							</section>
+							<section data-transition="none">
+								<h2><Data>Detect start and end.</Data></h2>
+
+									<img
+									  src="images\bend_detection\map_examples\4.png"
+										width="700px"
+									  />
+								
+								</section>
+								<section data-transition="none">
+									<h2><Data>Detect start and end.</Data></h2>
+									
+										<img
+										  src="images\bend_detection\map_examples\5.png"
+										/>
+
+									</section>
+
+									<section data-transition="none">
+										<h2><Data>Detect start and end.</Data></h2>
+											<img
+											  src="images\bend_detection\map_examples\1.png"
+											/>
+										</section>
+					<section data-transition="fade">
+						<h2><Data>Return samples</Data></h2>
+						<small>
+							<table>
+								<tr>
+									<td>Bend</td>
+									<td>avg. Angle</td>
+									<td>avg. Speed</td>
+									<td>Start Frame</td>
+									<td>10 Metre Frame</td>
+									<td>20 Metre Frame</td>
+									<td>30 Metre Frame</td>
+									<td>40 Metre Frame</td>
+									<td>50 Metre Frame</td>
+									<td>75 Metre Frame</td>
+									<td>100 Metre Frame</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>10.63</td>
+									<td>30.16</td>
+									<td>1945</td>
+									<td>1924</td>
+									<td>1900</td>
+									<td>1882</td>
+									<td>1861</td>
+									<td>1843</td>
+									<td>-1</td>
+									<td>-1</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>-22.31</td>
+									<td>22.13</td>
+									<td>2754</td>
+									<td>2733</td>
+									<td>2709</td>
+									<td>2688</td>
+									<td>2664</td>
+									<td>2646</td>
+									<td>2595</td>
+									<td>-1</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>8.93</td>
+									<td>30.1</td>
+									<td>3221</td>
+									<td>3200</td>
+									<td>3179</td>
+									<td>3155</td>
+									<td>3137</td>
+									<td>3116</td>
+									<td>3065</td>
+									<td>3011</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>-8.57</td>
+									<td>27.76</td>
+									<td>3419</td>
+									<td>3398</td>
+									<td>3377</td>
+									<td>3356</td>
+									<td>3338</td>
+									<td>3317</td>
+									<td>3266</td>
+									<td>-1</td>
+								</tr>
+							</table>
+						</small>
+					</section>
 					<section>
-						<h2>Evaluation</h2>
+						<h2><small>Automatic Bend Labelling</small><br/>Evaluation</h2>
+						<p>➕ Observed high accuracy.</p>
+						<p>➕ Constant labelling (no human bias).</p>
+						<p>➖ No filter of false bends: Roundabouts or Junctions.</p>
+						<p>➖ Relies on quality of NMEA data.</p>
+						<p>➖ Affected by noise in slow moving traffic.</p>
 					</section>
 				</section>
-				<section>
+				<section style="background: rgb(250, 77, 8);">
 					<h2>Milestone 2: Find Road Vanishing Point (R-VP) </h2>
 					<p>Road Vanishing Point (R-VP) Estimation</p>
 				</section>
@@ -238,7 +361,50 @@
 						<h2>Challenges Of Understanding Driving Scenes</h2>
 					</section>
 					<section>
-						<h2>Challenges</h2>
+						<h2>Ego-motion</h2>
+						<iframe
+							width="1200"
+							height="520"
+							src="https://www.youtube.com/embed/eCg-4aq2Ppo?&vq=hd1080&loop=1&playlist=eCg-4aq2Ppo"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							></iframe>
+					</section>
+					<section>
+						<h2>Occlusion</h2>
+						<iframe
+							width="1200"
+							height="520"
+							src="https://www.youtube.com/embed/8nhB54BJq18?&vq=hd1080&loop=1&playlist=8nhB54BJq18"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							></iframe>
+					</section>
+					<section>
+						<h2>Structured and Unstructured</h2>
+						<iframe
+							width="1200"
+							height="520"
+							src="https://www.youtube.com/embed/P_fR8DFr2G8?&vq=hd1080&loop=1&playlist=P_fR8DFr2G8"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							></iframe>
+					</section>
+					<section>
+						<h2>Other Factors</h2>
+						</h2>
+						<p>Illumination/ Glare</p>
+						<p>Weather</p>
+						<p>...</p>
 					</section>
 				</section>
 				<section>
@@ -246,10 +412,12 @@
 						<h2>Road Vanishing Point (R-VP) Estimation</h2>
 					</section>
 					<section>
-						<h2>Challenges</h2>
+						<h2>Goal</h2>
+						<p>Estimate the R-VP of the road.🔍</p>
+						<p>Establish understand the scene.🛣️</p>
 					</section>
 					<section>
-						<h2>Solution 1</h2>
+						<h2><small style="left:-10px; top:10px; position: relative;">Solution 1:</small>Perspective Shift Estimation</h2>
 						<iframe 
 							width="1200"
 							height="400"
@@ -261,10 +429,28 @@
 							allowfullscreen></iframe>
 					</section>
 					<section>
-						<h2>Evaluation 1</h2>
+						<h2><small style="left:-10px; top:10px; position: relative;">Solution 1:</small>Perspective Shift Estimation</h2>
+						<iframe 
+							width="1200"
+							height="400"
+							src="https://www.youtube.com/embed/difYS0XOhec?si=Z4WKSi7eJUEC39VF&vq=hd1080&loop=1&playlist=difYS0XOhec&start=55"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen></iframe>
+							<p>Notice high sensitivity to ego-motion.</p>
 					</section>
 					<section>
-						<h2>Solution 2</h2>
+						<h2><small style="left:-20px; top:10px; position: relative;">Evaluation 1:</small>Perspective Shift Estimation</h2>
+						<p>➕ Speed and Efficiency!</p>
+						<p>➕ Moderately good approximation.</p>
+						<p>➖ Highly sensitive to Ego-Motion.</p>
+						<p>➖ Highly sensitive to feature quality.</p>
+					</section>
+					<section>
+						<h2><small style="left:-10px; top:10px; position: relative;">Solution 2:</small>Optic Flow with RANSAC</h2>
+
 						<iframe
 							width="1200"
 							height="520"
@@ -277,78 +463,633 @@
 							></iframe>
 					</section>
 					<section>
-						<h2>Evaluation 2</h2>
+						<h2><small style="left:-10px; top:10px; position: relative;">Evaluation 2:</small>Optic Flow with RANSAC</h2>
+						<p>➕ Robust against moderate Ego-motion.</p>
+						<p>➕ Higher stability.</p>
+						<p>➕ Filter other vehicles.</p>
+						<p>➖ Difficulty finding global parameters.</p>
+						<p>➖ Computation cost.</p>
 						</section>
 				</section>
-				<section>
+				<!-- <section>
 					<section>
 						<h2>3. Interpreting R-VP with Dense Optical Flow </h2>
 					</section>
 					<section>
-						<h2>Challenges</h2>
+						<p>Explore the relationship between:<ul>
+							<li>R-VP</li>
+							<li>Motion Fields</li>
+							<li>Upcoming Bends</li>	
+						</ul>
+						</p>
 					</section>
 					<section>
-						<h2>Solution</h2>
+						<p>Select a Region of Interest (ROI) around the R-VP.</p>
+						<img
+							src="images/dof/crop_roi_rvp.png"
+							data-preview-image
+							alt="ROI"
+							width="800px"></img>
 					</section>
 					<section>
-						<h2>Evaluation</h2>
+						<p>Use Dense Optical Flow - Capture motion fields</p>
+						<img
+							src="images/dof/motion_fields.png"
+							data-preview-image
+							alt="ROI"
+							width="1000px"></img>
 					</section>
-				</section>
+					<section>
+						<p>Use Dense Optical Flow - Capture motion fields</p>
+						<img
+							src="images/dof/left_bend_plot.png"
+							data-preview-image
+							alt="ROI"
+							width="700px"></img>
+						<p>Steep change over R-VP</p>
+						<small>with gradual change to the left or right</small>
+					</section>
+					<section>
+						<p>Motion fields relationship with R-VP</p>
+						<img
+							src="images/dof/foe_finding.png"
+							data-preview-image
+							alt="ROI"
+							width="1000px"></img>
+						<p>Focus of Expansion (FoE) - divergence of features.</p>
+						<small>Homography reduces effect of ego-motion</small>
+					</section>
+					<section>
+						<p>We observe relationship between<small><ul>
+							<li>motion fields</li>
+							<li>R-VP</li>
+							<li>upcoming bends</li>
+						</ul></small></p>
+						<p>⚠️ Only hypothesis with more testing required.</p>
+					</section>
+				</section> -->
 				<section>
-					<section>
-						<h2>5. Dataset Generation</h2>
+					<section style="background: rgb(250, 77, 8);">
+						<h2> Milestone 3: Dataset Generation</h2>
 					</section>
 					<section>
 						<h2>Generation Pipeline</h2>
 						<img src="images/dataset_gen/pipeline.png" data-preview-image alt="Generation Pipeline" width="10000px"></img>
 					</section>
-					<section>
-						<h2>Challenges</h2>
+					<section  data-auto-animate>
+						<h2>Generation Time</h2>
+						<p>29783m 49s (20.68 days)</p>
+					</section>
+					<section  data-auto-animate>
+						<h2>Generation Time</h2>
+						<p  style=" color: red;">29783m 49s (20.68 days)</p>
+						<p>⬇️ Optimisations + Parnell Processing</p>
+						<p  style=" color: green;";>2644m 18s (40.56 hours)</p>
+					</section>
+					<section data-auto-animate>
+						<p>Input variants generated</p>
+						<div data-id="Wide_RGB_Box" style="height: 50px; background: salmon;">Wide RGB</div>
+						<div data-id="Wide_OF_Box" style="height: 50px; background: rgb(27, 143, 75);">Narrow RGB</div>
+						<div data-id="Narrow_RGB_Box" style="height: 50px; background: rgb(212, 47, 130);">Wide Optical Flow</div>
+						<div data-id="Narrow_RGB_Box" style="height: 50px; background: rgb(245, 169, 70);">Narrow Optical Flow</div>
+					</section>
+					<section data-auto-animate  data-transition="fade">
+						<p>Generated samples of each input variant</p>
+						<div style="width:100%;;">
+							<div style=" display: flex; width:600px; align-self: center; max-width: 600px; flex-wrap: wrap; text-align: center;margin: 0 auto;">
+								<div data-id="Wide_RGB_Box" style="height: 300px; width: 300px;  background: salmon;">Wide RGB</div>
+								<div data-id="Narrow_RGB_Box" style="height: 300px; width: 300px; background: rgb(212, 47, 130);">Wide Optical Flow</div>
+								<div data-id="Wide_OF_Box" style="height: 300px; width: 300px; background: rgb(27, 143, 75);">Narrow RGB</div>
+								<div data-id="Narrow_RGB_Box" style="height: 300px; width: 300px; background: rgb(245, 169, 70);">Narrow Optical Flow</div>
+							</div>
+						</div>
+					</section>
+					<section data-transition="fade">
+						<p>Generated samples of each input variant</p>
+						<iframe
+							width="600"
+							height="600"
+							src="https://www.youtube.com/embed/DgH-YEtrdD4?&vq=hd1080&loop=1&playlist=DgH-YEtrdD4"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							></iframe>
+					</section>
+				</section>
+				<section>
+					<section style="background: rgb(250, 77, 8);">
+						<h2>Milestone 4: Deep Learning Classification Models </h2>
 					</section>
 					<section>
-						<h2>Solution</h2>
+						<p>Train and compare models on these four input variants.</p>
 					</section>
 					<section>
-						<h2>Evaluation</h2>
+						<h2>Evaluation metrics</h2>
+						<p>Accuracy</p>
+						<p>Class level: Precision, Recall, F1</p>
+						<p>Weighted F1-Score</p>
+						<p>Confusion Matrix</p>
+					</section>
+					<section>
+						<h2>(2+1)D Video Classification Design</h2>
+						<img
+							src="images/nn/design.png"
+							data-preview-image alt="Model Design"
+							width="200px"></img>
+						[7]
+					</section>
+					<section>
+						<h2>Design Summary</h2>
+						<p>(2+1)D Convolutional neural network (CNN).</p>
+						<p>Capture spatial and temporal patterns.</p>
+						<p>Take advantage of hierarchical features.</p>
+						<p>Multi-Layers generalise by producing abstract feature patterns.</p>
+						<p>Final class prediction outputted as a dense vector.</p>
+
+						[1, 7]
+					</section>
+					<section>
+						<h2>What is (2+1)D convolution?</h2>
+						<p>Approximates 3D convolution.</p>
+						<p>Separates spatial (2D) and temporal (1D) componets.</p>
+						<p>Less weights to train.</p>
+
+						[1, 7]
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>6. Deep Learning Classification Models </h2>
+						<h2>Model Performance</h2>
 					</section>
 					<section>
-						<h2>Challenges</h2>
+						<p>We split the dataset into 3 sets:</p>
+						<ul>
+							<li>70% Training set</li>
+							<li>20% Validation set</li>
+							<li>10% Test set</li>
+						</ul>
+						<hr/>
+						<small>Test set is used to evaluate the model's performance on unseen data.</small>
 					</section>
 					<section>
-						<h2>Solution</h2>
+						<h2>Wide View Datasets</h2>
+						<img
+							src="images/nn/wide/7-class-wide-balencing.png"
+							data-preview-image alt="Wide view classes"
+							width="1000px"></img>	
+					</section>
+					<!-- <section>
+						<h2>Wide RGB MODEL <small>Confusion Matrix</small></h2>
+						<img
+							src="images/nn/wide/rgb/Confusion_VAL.png"
+							data-preview-image alt="Wide RGB Model"
+							width="400px"></img>
+						<img
+							src="images/nn/wide/rgb/Confusion_Test.png"
+							data-preview-image alt="Wide RGB Model"
+							width="400px"></img>
+					</section> -->
+					<!-- <section>
+						<h2>Wide RGB MODEL <small>Performance</small></h2>
+						<p>Accuracy 73.78% -- Weighted F1-Score: 0.7399</p>
+						<small>
+						<table>
+							<thead>
+							  <tr>
+								<th>Category</th>
+								<th>Precision (p)</th>
+								<th>Recall (r)</th>
+								<th>F1-score (f1)</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td>light left</td>
+								<td>0.6563</td>
+								<td>0.6000</td>
+								<td>0.6269</td>
+							  </tr>
+							  <tr>
+								<td>light right</td>
+								<td>0.8438</td>
+								<td>0.6585</td>
+								<td>0.7397</td>
+							  </tr>
+							  <tr>
+								<td>moderate left</td>
+								<td>0.5882</td>
+								<td>0.7692</td>
+								<td>0.6667</td>
+							  </tr>
+							  <tr>
+								<td>moderate right</td>
+								<td>0.7436</td>
+								<td>0.8056</td>
+								<td>0.7733</td>
+							  </tr>
+							  <tr>
+								<td>sharp left</td>
+								<td>0.5556</td>
+								<td>0.5882</td>
+								<td>0.5714</td>
+							  </tr>
+							  <tr>
+								<td>sharp right</td>
+								<td>0.7692</td>
+								<td>0.6250</td>
+								<td>0.6897</td>
+							  </tr>
+							  <tr>
+								<td>streight</td>
+								<td>0.9250</td>
+								<td>0.9024</td>
+								<td>0.9136</td>
+							  </tr>
+							</tbody>
+						  </table>
+						</small>
+						  
 					</section>
 					<section>
-						<h2>Evaluation</h2>
+						<h2>Wide Optical Flow MODEL <small>Confusion Matrix</small></h2>
+						<img
+							src="images/nn/wide/of/Conclusion_Val.png"
+							data-preview-image alt="Wide RGB Model"
+							width="400px"></img>
+						<img
+							src="images/nn/wide/of/Confuction_TEST.png"
+							data-preview-image alt="Wide RGB Model"
+							width="400px"></img>
 					</section>
+					<section>
+						<h2>Wide Optical Flow MODEL <small>Performance</small></h2>
+						<p>Accuracy 55.55% -- Weighted F1-Score: 0.5568</p>
+						<small>
+							<table>
+								<thead>
+								  <tr>
+									<th>Category</th>
+									<th>Precision (p)</th>
+									<th>Recall (r)</th>
+									<th>F1-score (f1)</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>light left</td>
+									<td>0.5588</td>
+									<td>0.5429</td>
+									<td>0.5507</td>
+								  </tr>
+								  <tr>
+									<td>light right</td>
+									<td>0.5667</td>
+									<td>0.4146</td>
+									<td>0.4789</td>
+								  </tr>
+								  <tr>
+									<td>moderate left</td>
+									<td>0.3611</td>
+									<td>0.3333</td>
+									<td>0.3467</td>
+								  </tr>
+								  <tr>
+									<td>moderate right</td>
+									<td>0.5000</td>
+									<td>0.5278</td>
+									<td>0.5135</td>
+								  </tr>
+								  <tr>
+									<td>sharp left</td>
+									<td>0.5217</td>
+									<td>0.7059</td>
+									<td>0.6000</td>
+								  </tr>
+								  <tr>
+									<td>sharp right</td>
+									<td>0.4500</td>
+									<td>0.5625</td>
+									<td>0.5000</td>
+								  </tr>
+								  <tr>
+									<td>streight</td>
+									<td>0.7727</td>
+									<td>0.8293</td>
+									<td>0.8000</td>
+								  </tr>
+								</tbody>
+							  </table>
+							  
+						</small>
+					</section> -->
+					<section>
+						<h2>Narrow View Datasets</h2>
+						<img
+							src="images\nn\narrow\Class Balencing.png"
+							data-preview-image alt="Narrow view classes"
+							width="1000px"></img>	
+					</section>
+					<!-- <section>
+						<h2>Narrow RGB MODEL <small>Confusion Matrix</small></h2>
+						<img
+						src="images/nn/narrow/rgb/confu_val.png"
+						data-preview-image alt="Wide RGB Model"
+						width="400px"></img>
+						<img
+						src="images/nn/narrow/rgb/Confu_Test.png"
+						data-preview-image alt="Wide RGB Model"
+						width="400px"></img>
+					</section>
+				<section>
+					<h2>Narrow RGB MODEL <small>Performance</small></h2>
+					<p>Accuracy 43.27% -- Weighted F1-Score: 0.4480</p>
+					<small>
+						<table>
+							<thead>
+							  <tr>
+								<th>Category</th>
+								<th>Precision (p)</th>
+								<th>Recall (r)</th>
+								<th>F1-score (f1)</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td>moderate left</td>
+								<td>0.4048</td>
+								<td>0.4474</td>
+								<td>0.4250</td>
+							  </tr>
+							  <tr>
+								<td>moderate right</td>
+								<td>0.5405</td>
+								<td>0.5882</td>
+								<td>0.5634</td>
+							  </tr>
+							  <tr>
+								<td>sharp left</td>
+								<td>0.5000</td>
+								<td>0.3125</td>
+								<td>0.3846</td>
+							  </tr>
+							  <tr>
+								<td>sharp right</td>
+								<td>0.3333</td>
+								<td>0.3125</td>
+								<td>0.3226</td>
+							  </tr>
+							</tbody>
+						  </table>
+						</small>
 				</section>
 				<section>
-					<section>
-						<h2>Comparing RGB with Optical Flow </h2>
-					</section>
+					<h2>Narrow Optical Flow MODEL <small>Confusion Matrix</small></h2>
+					<img
+					src="images/nn/narrow/of/conf_val.png"
+					data-preview-image alt="Wide RGB Model"
+					width="400px"></img>
+					<img
+					src="images/nn/narrow/rgb/Confu_Test.png"
+					data-preview-image alt="Wide RGB Model"
+					width="400px"></img>
 				</section>
 				<section>
-					<section>
-						<h2>Outcomes</h2>
-					</section>
+					<h2>Narrow Optical Flow MODEL <small>Performance</small></h2>
+					<p>Accuracy 50.96% -- Weighted F1-Score: 0.4783</p>
+					<small>
+						<table>
+							<thead>
+							  <tr>
+								<th>Category</th>
+								<th>Precision (p)</th>
+								<th>Recall (r)</th>
+								<th>F1-score (f1)</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td>moderate left</td>
+								<td>0.5000</td>
+								<td>0.6579</td>
+								<td>0.5682</td>
+							  </tr>
+							  <tr>
+								<td>moderate right</td>
+								<td>0.5862</td>
+								<td>0.5000</td>
+								<td>0.5397</td>
+							  </tr>
+							  <tr>
+								<td>sharp left</td>
+								<td>0.3333</td>
+								<td>0.3125</td>
+								<td>0.3226</td>
+							  </tr>
+							  <tr>
+								<td>sharp right</td>
+								<td>0.4000</td>
+								<td>0.2500</td>
+								<td>0.3077</td>
+							  </tr>
+							</tbody>
+						  </table>
+						</small>
+				</section> -->
+				<section>
+					<h2>Overall</h2>
+					<small>
+					<table>
+						<thead>
+						  <tr>
+							<th>Model</th>
+							<th>Accuracy</th>
+							<th>Loss</th>
+							<th>Weighted F1-score (f1)</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>Wide RGB Model (7-class)</td>
+							<td>73.78%</td>
+							<td>0.8675</td>
+							<td>0.7399</td>
+						  </tr>
+						  <tr>
+							<td>Wide Optical Flow Model (7-class)</td>
+							<td>55.55%</td>
+							<td>1.1519</td>
+							<td>0.5568</td>
+						  </tr>
+						  <tr>
+							<td>Narrow RGB Model (4-class)</td>
+							<td>43.27%</td>
+							<td>1.1907</td>
+							<td>0.4480</td>
+						  </tr>
+						  <tr>
+							<td>Narrow Optical Flow Model (4-class)</td>
+							<td>50.96%</td>
+							<td>1.2072</td>
+							<td>0.4783</td>
+						  </tr>
+						</tbody>
+					  </table>
+					</small>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Evaluated and Discussed the Proposed Hypothesis.🔍</h3>
 				</section>
 				<section>
+					<h2>Hypothesis 1:</h2>
+					<b>Is machine learning effective for bend direction and severity classification?</b>
+					<p>➕ Yes, we can classify bends with high accuracy. (73.78% for RGB Wide)</p>
+					<p>➖ However, requires more data to be robust.</p> 
+				</section>
+				<section>
+					<h2>Hypothesis 2:</h2>
+					<b>Do motion fields provide a strong input representation (for human-like judgement)?</b>
+					<p>➕ Wide Optical Flow showed generalisation (55.55% Accuracy)</p>
+					<p>➕ Strong class boundaries for bend direction.</p>
+					<p>➖ High confusion for bend severity.</p>
+					<p>➖ RGB outperforms motion field.</p>
+				</section>
+				<section>
+					<h2>Hypothesis 3:</h2>
+					<b>Will focus around the R-VP, inspired by human-like gaze, improve classification?</b>
+					<p>➕ Narrow View Optical Flow performed marginally better than Narrow View RGB.</p>
+					<p>➖ High confusion and poor generalisation.</p>
+					<p>➖ Limited by quality of R-VP estimation.</p>
+					<p>➖ Limited dataset due to hardware limitations.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Limitations ⬇️</h2>
+					<p>High computational cost.</p>
+					<p>No Real-time.</p>
+					<p>Ego-morton introduces additional challenges.</p>
+					<p>Occlusion of road features.</p>
+					<p>Separation of bends from junctions and roundabouts.</p>
+					<p>Adaptability to high noise (such as window wipers).</p>
+				</section>
+
+			</section>
+				<section>
 					<section>
-						<h2>Limitations</h2>
+						<h2>Achievements 🥅</h2>
+					</section>
+					<section>
+						<h3>End-To-End Pipeline 🏭</h3>
+						<p>Automatic bend labelling</p>
+						<p>Road Vanishing Point (R-VP) estimation</p>
+						<p>Dense Optical Flow - Motion fields</p>
+						<p>Dataset generation</p>
+						<p>Deep Learning Classification Models</p>
+					</section>
+					<section>
+						<h3>Produced Open Source Dataset💾</h3>
+						<p>For comparing 4 different input variants.</p>
+						<p>Publicly available for future development.</p>
+						<p>Release raw dash cam and NMEA records</p>
+					</section>
+					<section>
+						<h3>Countered real-world application challenges🛣️.</h3>
+						<p>Various road conditions and illumination.</p>
+						<p>Handle Unstructured and structured environments.</p>
+						<p>Filter bias by masking other vehicles.</p>
+						<p>Reduces Effects of ego-motion.</p>
+						<p>Interpreted bends from noisy GPS data.</p>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Future Work</h2>
+						<p>Incorporate additional sensors to counter ego-motion [8]</p>
+						<p>Use Depth Maps Through Stereo Vision</p>
+						<p>Explore Advanced DNN Architectures Further</p>
 					</section>
+					<!-- <section>
+						<h2>Incorporate additional sensors to counter ego-motion</h2>
+						<p>Such as Inertial Measurement Unit (IMU)</p>
+					</section>
+					<section>
+						<h2>Use Depth Maps Through Stereo Vision</h2>
+						<p>Calculate absolute depth map for scene understanding</p>
+						<small>Stereo camera videos with configuration and  are publicly available</small>
+					</section>
+					<section>
+						<h2>Explore Advanced DNN Architectures Further</h2>
+						<p>Evaluate dataset on other machine learning architectures.</p>
+						<small>Such as: Two-Stream CNN/ Ensemble-based/ Transformer-based</small>
+					</section> -->
 				</section>
 				<section>
 					<section>
 						<h2>Bibliography</h2>
+						<div style="font-size: 10px;">
+
+							<p>[1]D. Tran, H. Wang, L. Torresani, J. Ray, Yann LeCun, and Manohar Paluri, “A closer look at spatiotemporal convolutions for action recognition,” 2018. https://arxiv.org/abs/1711.11248</p>
+							<p>[2]F. I. Kandil, A. Rotter, and M. Lappe, “Car drivers attend to different gaze targets when negotiating closed vs. open bends,” Journal of Vision, vol. 10, Art. no. 4, Apr. 2010, doi: https://doi.org/10.1167/10.4.24.</p>
+							<p>[3]P. Simeonov et al., “Evaluation of advanced curve speed warning system to prevent fire truck rollover crashes,” Journal of safety research, vol. 83, pp. 388–399, 2022..</p>
+							<p>[4]S. Chowdhury, M. Faizan, and H. M. Imran, “Advanced curve speed warning system using standard GPS technology and road-level mapping information.,” 2020, pp. 464–472.</p>
+							<p>[5]C. D. Mole, G. Kountouriotis, J. Billington, and R. M. Wilkie, “Optic flow speed modulates guidance level control: New insights into two-level steering.,” Journal of experimental psychology: human perception and performance, vol. 42, Art. no. 11, 2016.</p>
+							<p>[6]S. Raviteja and R. Shanmughasundaram, “Advanced driver assitance system (ADAS),” 2018, pp. 737–740. doi: https://doi.org/10.1109/ICCONS.2018.8663146.</p>
+							<p>[7]TensorFlow, “Video classification with a 3D convolutional neural network.”</p>
+							<p>[8]B. Guan, Q. Yu, and F. Fraundorfer, “Minimal solutions for the rotational alignment of IMU-camera systems using homography constraints,” Computer vision and image understanding, vol. 170, pp. 79–91, 2018.</p>
+							<p>[9]Jumaa, Bassim Abdulbaqi, A. A. Mousa, and A. A. Mousa, “Advanced driver assistance system (ADAS): A review of systems and technologies,” International Journal of Advanced Research in Computer Engineering & Technology (IJARCET), vol. 8, Art. no. 6, 2019.</p>
+							
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Links</h2>
+						<small>
+							<table>
+								<thead>
+								  <tr>
+									<th>Resource</th>
+									<th>Link</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td>Final Dataset</td>
+									<td><a href="https://huggingface.co/datasets/aap9002/UK-Road-Bend-Classification" target="_blank">UK-Road-Bend-Classification</a></td>
+								  </tr>
+								  <tr>
+									<td>Trained Models</td>
+									<td><a href="https://huggingface.co/aap9002/RGB_Optic_Flow_Bend_Classification" target="_blank">RGB & Optical Flow Models</a></td>
+								  </tr>
+								  <tr>
+									<td>Raw Dashcam Videos</td>
+									<td><a href="https://huggingface.co/datasets/aap9002/UK-Road-DashCam" target="_blank">UK-Road-DashCam</a></td>
+								  </tr>
+								  <tr>
+									<td>Component Testing Dataset</td>
+									<td><a href="https://huggingface.co/datasets/aap9002/Stereo-Road-Curvature-Dashcam" target="_blank">Stereo-Road-Curvature-Dashcam</a></td>
+								  </tr>
+								  <tr>
+									<td>Source Code</td>
+									<td><a href="https://github.com/AAP9002/Third-Year-Project" target="_blank">GitHub Repo</a></td>
+								  </tr>
+								  <tr>
+									<td>Calibration Files</td>
+									<td><a href="https://huggingface.co/datasets/aap9002/Stereo-Road-Curvature-Dashcam/tree/main/camera_calibration" target="_blank">Camera Calibration</a></td>
+								  </tr>
+								</tbody>
+							  </table>							  
+						</small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Thank you!</h2>
 					</section>
 				</section>
 			</div>
